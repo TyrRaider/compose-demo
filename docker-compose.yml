@@ -45,6 +45,17 @@ services:
       - /home/ops/devops/ssltest/nginx-conf.d/:/etc/nginx/conf.d
     networks:
       - app
+      
+  # certbot:
+  #   image: certbot/certbot
+  #   hostname: certbot
+  #   container_name: certbot
+  #   depends_on:
+  #   - nginx
+  #   volumes:
+  #     - etc-letsencrypt:/etc/letsencrypt
+  #     - www-html:/var/www/html
+  #   command: certonly --webroot --webroot-path=/var/www/html --email ops@ops.com --agree-tos --no-eff-email --staging -d test.domain.com
 
 volumes:
   www-html:
